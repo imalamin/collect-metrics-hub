@@ -96,12 +96,6 @@ const TransactionTrends = () => {
                     backgroundColor: `hsl(var(--muted))`,
                     background: `hsl(var(--muted))`
                   }}
-                  // Use inline style to apply custom background for each item
-                  indicatorStyle={{
-                    backgroundColor: isPositive 
-                      ? `hsl(142, 71%, 45%)` 
-                      : `hsl(0, 84%, 60%)`
-                  }}
                 />
               </div>
             </div>
