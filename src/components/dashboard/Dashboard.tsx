@@ -4,11 +4,9 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import MetricCard from './MetricCard';
 import FilterPanel from './FilterPanel';
-import BarChart from './charts/BarChart';
-import PieChart from './charts/PieChart';
-import LineChart from './charts/LineChart';
 import CollectionTable from './CollectionTable';
 import QuickActions from './QuickActions';
+import AnalyticsSection from './AnalyticsSection';
 import { Users, Database, Building2, TrendingUp, Award } from 'lucide-react';
 
 const Dashboard = () => {
@@ -20,7 +18,7 @@ const Dashboard = () => {
         <Header />
         
         <div className="flex-1 overflow-y-auto p-6">
-          <h1 className="text-2xl font-bold mb-6">Dashboard Overview</h1>
+          <h1 className="text-2xl font-bold mb-6 animate-fade-in">Dashboard Overview</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             <MetricCard 
@@ -63,11 +61,7 @@ const Dashboard = () => {
           
           <QuickActions />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-6">
-            <BarChart />
-            <PieChart />
-            <LineChart />
-          </div>
+          <AnalyticsSection className="mb-6" />
           
           <CollectionTable />
         </div>

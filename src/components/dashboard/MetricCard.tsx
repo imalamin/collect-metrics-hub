@@ -15,7 +15,7 @@ interface MetricCardProps {
 
 const MetricCard = ({ title, value, icon, trend, className }: MetricCardProps) => {
   return (
-    <div className={cn('dashboard-card dashboard-card-hover', className)}>
+    <div className={cn('dashboard-card dashboard-card-hover animate-fade-in', className)}>
       <div className="flex justify-between items-start">
         <div>
           <p className="dashboard-stat-label">{title}</p>
@@ -27,7 +27,7 @@ const MetricCard = ({ title, value, icon, trend, className }: MetricCardProps) =
             </p>
           )}
         </div>
-        <div className="p-2 rounded-lg bg-primary/10">
+        <div className="p-2 rounded-lg bg-primary/10 animate-pulse-subtle">
           {icon}
         </div>
       </div>
