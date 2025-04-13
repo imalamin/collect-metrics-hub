@@ -13,8 +13,15 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { useLocation, Link } from 'react-router-dom';
 
 const Sidebar = () => {
+  const location = useLocation();
+  
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
+
   return (
     <div className="w-[260px] border-r border-border h-screen bg-card flex flex-col">
       <div className="p-4">
@@ -26,39 +33,59 @@ const Sidebar = () => {
         </div>
         
         <div className="space-y-1">
-          <Button variant="ghost" className="w-full justify-start gap-2 font-normal" asChild>
-            <a href="/">
+          <Button 
+            variant={isActive('/') ? "secondary" : "ghost"} 
+            className="w-full justify-start gap-2 font-normal" 
+            asChild
+          >
+            <Link to="/">
               <LayoutDashboard size={18} />
               Dashboard
-            </a>
+            </Link>
           </Button>
           
-          <Button variant="ghost" className="w-full justify-start gap-2 font-normal" asChild>
-            <a href="/reports">
+          <Button 
+            variant={isActive('/reports') ? "secondary" : "ghost"} 
+            className="w-full justify-start gap-2 font-normal" 
+            asChild
+          >
+            <Link to="/reports">
               <FileText size={18} />
               Reports
-            </a>
+            </Link>
           </Button>
           
-          <Button variant="ghost" className="w-full justify-start gap-2 font-normal" asChild>
-            <a href="/providers">
+          <Button 
+            variant={isActive('/providers') ? "secondary" : "ghost"} 
+            className="w-full justify-start gap-2 font-normal" 
+            asChild
+          >
+            <Link to="/providers">
               <Users size={18} />
               Providers
-            </a>
+            </Link>
           </Button>
           
-          <Button variant="ghost" className="w-full justify-start gap-2 font-normal" asChild>
-            <a href="/branches">
+          <Button 
+            variant={isActive('/branches') ? "secondary" : "ghost"} 
+            className="w-full justify-start gap-2 font-normal" 
+            asChild
+          >
+            <Link to="/branches">
               <Home size={18} />
               Branches
-            </a>
+            </Link>
           </Button>
           
-          <Button variant="ghost" className="w-full justify-start gap-2 font-normal" asChild>
-            <a href="/analytics">
+          <Button 
+            variant={isActive('/analytics') ? "secondary" : "ghost"} 
+            className="w-full justify-start gap-2 font-normal" 
+            asChild
+          >
+            <Link to="/analytics">
               <PieChart size={18} />
               Analytics
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
