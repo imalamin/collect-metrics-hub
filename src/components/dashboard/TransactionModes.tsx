@@ -99,10 +99,14 @@ const TransactionModes = ({ className }: { className?: string }) => {
                 <span className="font-medium">{mode.percentage}%</span>
               </div>
             </div>
-            <Progress className="h-2" value={mode.percentage} 
-              style={{backgroundColor: `hsl(var(--muted))`, 
-                     background: `hsl(var(--muted))`,
-                     '--progress-foreground': `var(--${mode.color.split('-')[1]})` }} />
+            <Progress 
+              className="h-2" 
+              value={mode.percentage} 
+              style={{
+                backgroundColor: `hsl(var(--muted))`, 
+                background: `hsl(var(--muted))`
+              }}
+            />
           </div>
         ))}
         <Button variant="outline" className="w-full mt-4">
